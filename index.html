@@ -11,21 +11,21 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='none' stroke='%23B4322B' stroke-width='5'/%3E%3Ctext x='32' y='42' font-family='Georgia' font-size='30' text-anchor='middle' fill='%23B4322B'%3EA%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,600&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#FBF5EF; --paper-2:#F2E4D8; --ink:#2B211A; --ink-soft:#6B5848;
+  --paper:#FBF5EF; --paper-2:#F2E4D8; --ink:#2B211A; --ink-soft:#4E3E32;
   --guilloche:#B8875E; --stamp:#B4322B; --brass:#C6A15B; --night:#1C1612; --night-ink:#F3E8DE;
-  --display:"Bodoni Moda", Georgia, serif; --body:"Hanken Grotesk", system-ui, sans-serif; --mono:"IBM Plex Mono", ui-monospace, monospace;
+  --display:"Lora", Georgia, serif; --body:"Figtree", system-ui, sans-serif; --mono:"IBM Plex Mono", ui-monospace, monospace;
   --wrap:1180px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 18px/1.65 var(--body);-webkit-font-smoothing:antialiased}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--stamp);outline-offset:3px;border-radius:2px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
-.mono{font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;font-size:12px}
+.mono{font-family:var(--mono);letter-spacing:.05em;text-transform:uppercase;font-size:13px;font-weight:500}
 
 /* top bar */
 .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0}
@@ -43,11 +43,11 @@ a{color:inherit}
   linear-gradient(160deg,#FFFBF6,#F2E5D8);
   border:1px solid rgba(43,33,26,.18);border-radius:14px;padding:26px 26px 0;box-shadow:0 30px 60px -30px rgba(43,33,26,.38),0 2px 0 rgba(255,255,255,.7) inset;overflow:hidden}
 .passport .head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(43,33,26,.15);padding-bottom:10px;margin-bottom:18px}
-.passport .head b{font-family:var(--display);font-weight:500;font-size:20px;letter-spacing:.02em}
+.passport .head b{font-family:var(--display);font-weight:600;font-size:21px;letter-spacing:.02em}
 .passport .grid{display:grid;grid-template-columns:150px 1fr;gap:22px}
 .passport img{width:150px;height:190px;object-fit:cover;object-position:50% 18%;border-radius:4px;filter:saturate(.92) contrast(1.02);border:1px solid rgba(43,33,26,.2)}
 .field{margin:0 0 9px}
-.field dt{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.field dt{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
 .field dd{margin:0;font-family:var(--mono);font-size:15px;font-weight:500}
 .mrz{margin:22px -26px 0;padding:14px 26px 16px;background:rgba(255,255,255,.55);border-top:1px dashed rgba(43,33,26,.25);font-family:var(--mono);font-size:clamp(11px,1.45vw,15px);letter-spacing:.14em;line-height:1.5;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:clip}
 .stamp{position:absolute;right:18px;top:96px;width:150px;height:150px;border:3px solid var(--stamp);border-radius:50%;color:var(--stamp);display:grid;place-items:center;text-align:center;transform:rotate(-14deg);opacity:.88;mix-blend-mode:multiply;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:1.35}
@@ -57,9 +57,9 @@ a{color:inherit}
   .stamp{animation:thump .7s .6s both cubic-bezier(.2,1.6,.4,1)}
   @keyframes thump{from{transform:rotate(-14deg) scale(1.6);opacity:0}to{transform:rotate(-14deg) scale(1);opacity:.88}}
 }
-.pitch h1{font-family:var(--display);font-weight:500;font-size:clamp(40px,5.2vw,66px);line-height:1.04;letter-spacing:-.01em;margin:0 0 22px}
+.pitch h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,4.8vw,60px);line-height:1.12;letter-spacing:-.005em;margin:0 0 22px}
 .pitch h1 em{font-style:italic;color:var(--stamp)}
-.pitch p{font-size:19px;color:var(--ink-soft);max-width:34ch;margin:0 0 30px}
+.pitch p{font-size:20px;color:var(--ink-soft);max-width:36ch;margin:0 0 30px}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:16px;padding:14px 22px;border-radius:999px;border:1.5px solid var(--ink)}
 .btn.primary{background:var(--ink);color:var(--paper)}
@@ -68,7 +68,7 @@ a{color:inherit}
 
 /* stamps / series */
 .series{padding:84px 0;border-top:1px solid rgba(43,33,26,.12)}
-.series h2,.formats h2,.rules h2{font-family:var(--display);font-weight:500;font-size:clamp(30px,3.4vw,44px);line-height:1.1;margin:0 0 10px}
+.series h2,.formats h2,.rules h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.4vw,44px);line-height:1.1;margin:0 0 10px}
 .lede{color:var(--ink-soft);max-width:56ch;margin:0 0 44px}
 .visas{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .visa{position:relative;padding:28px 26px 26px;border:2px solid currentColor;border-radius:10px;background:rgba(255,255,255,.35)}
@@ -78,18 +78,18 @@ a{color:inherit}
 .visa::after{content:"";position:absolute;inset:5px;border:1px dashed currentColor;border-radius:7px;opacity:.55;pointer-events:none}
 .visa .mono{display:block;margin-bottom:12px}
 .visa h3{font-family:var(--display);font-weight:700;font-size:28px;margin:0 0 10px;line-height:1.1}
-.visa p{color:var(--ink);margin:0;font-size:16px}
+.visa p{color:var(--ink);margin:0;font-size:17px}
 
 /* work */
 .work{background:var(--night);color:var(--night-ink);padding:92px 0}
-.work h2{font-family:var(--display);font-weight:500;font-size:clamp(30px,3.4vw,44px);margin:0 0 10px}
-.work .lede{color:#C9B6A4}
+.work h2{font-family:var(--display);font-weight:600;font-size:clamp(30px,3.4vw,44px);margin:0 0 10px}
+.work .lede{color:#D9C8B8}
 .reels{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
 .reel figure{margin:0}
 .reel video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:#000;display:block}
 .reel figcaption{margin-top:14px}
 .reel figcaption b{display:block;font-weight:600;font-size:17px}
-.reel figcaption span{color:#C9B6A4;font-size:15px}
+.reel figcaption span{color:#D9C8B8;font-size:16px}
 .reel .mono{color:var(--guilloche)}
 
 /* formats */
@@ -98,7 +98,7 @@ a{color:inherit}
 .f{padding:24px 0;border-bottom:1px solid rgba(43,33,26,.18);display:grid;grid-template-columns:150px 1fr;gap:18px}
 .f .mono{color:var(--ink-soft);padding-top:5px}
 .f h3{margin:0 0 4px;font-size:20px;font-weight:600}
-.f p{margin:0;color:var(--ink-soft);font-size:16px}
+.f p{margin:0;color:var(--ink-soft);font-size:17px}
 
 /* rules */
 .rules{padding:0 0 92px}
@@ -108,11 +108,11 @@ a{color:inherit}
 
 /* contact */
 .contact{background:var(--paper-2);padding:88px 0 70px;border-top:1px solid rgba(43,33,26,.12)}
-.contact h2{font-family:var(--display);font-weight:500;font-size:clamp(34px,4.6vw,60px);line-height:1.05;margin:0 0 18px}
+.contact h2{font-family:var(--display);font-weight:600;font-size:clamp(34px,4.6vw,60px);line-height:1.05;margin:0 0 18px}
 .contact .mail{font-family:var(--display);font-style:italic;font-size:clamp(22px,2.6vw,32px);color:var(--stamp);text-decoration:none;border-bottom:1px solid currentColor}
 .contact .mail:hover{color:var(--ink)}
 .socials{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:30px}
-.socials a{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-decoration:none;color:var(--ink-soft)}
+.socials a{font-family:var(--mono);font-size:14px;letter-spacing:.06em;text-decoration:none;color:var(--ink-soft)}
 .socials a:hover{color:var(--ink)}
 footer{padding:22px 0 30px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--ink-soft);background:var(--paper-2);word-break:break-all}
 
