@@ -33,6 +33,11 @@ a{color:inherit}
 .bar nav{display:flex;gap:22px;align-items:center}
 .bar nav a{text-decoration:none;font-size:15px;color:var(--ink-soft)}
 .bar nav a:hover{color:var(--ink)}
+.lang{display:inline-flex;border:1px solid rgba(43,33,26,.28);border-radius:999px;padding:2px;gap:2px}
+.lang button{font:500 11px/1 var(--mono);letter-spacing:.12em;border:0;background:transparent;color:var(--ink-soft);padding:6px 9px;border-radius:999px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.lang button:hover{color:var(--ink)}
+.lang button[aria-pressed="true"]:hover{color:var(--paper)}
 .chip{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--stamp);color:var(--stamp);padding:4px 9px;border-radius:999px;white-space:nowrap}
 
 /* hero */
@@ -122,6 +127,7 @@ footer{padding:22px 0 30px;font-family:var(--mono);font-size:12px;letter-spacing
   .reels{max-width:380px}
   .flist,.rules ul{grid-template-columns:1fr}
   .bar nav a:not(.chip){display:none}
+  .bar nav{gap:10px}
 }
 @media (max-width:520px){
   .passport .grid{grid-template-columns:110px 1fr;gap:16px}
@@ -138,35 +144,36 @@ footer{padding:22px 0 30px;font-family:var(--mono);font-size:12px;letter-spacing
   <header class="bar">
     <span class="who">AVA&nbsp;SOREL</span>
     <nav aria-label="Sections">
-      <a href="#work">Work</a><a href="#formats">For brands</a><a href="#contact">Contact</a>
-      <span class="chip" title="Ava is an AI-generated character">AI-generated</span>
+      <a href="#work" data-i18n="nav1">Work</a><a href="#formats" data-i18n="nav2">For brands</a><a href="#contact" data-i18n="nav3">Contact</a>
+      <span class="chip" title="Ava is an AI-generated character" data-i18n="chip" data-i18n-title="chipT">AI-generated</span>
+      <span class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><button type="button" data-lang="tr" aria-pressed="false" lang="tr">TR</button></span>
     </nav>
   </header>
 
   <section class="hero" aria-labelledby="h1">
-    <div class="passport" role="img" aria-label="Ava Sorel's passport page: AI-generated presenter, travelling since 2026">
-      <div class="head"><b>Ava Sorel</b><span class="mono">Presenter · Passport</span></div>
+    <div class="passport" role="img" aria-label="Ava Sorel's passport page: AI-generated presenter, travelling since 2026" data-i18n-aria="passA">
+      <div class="head"><b>Ava Sorel</b><span class="mono" data-i18n="passH">Presenter · Passport</span></div>
       <div class="grid">
         <img src="ava-portre.jpg" alt="" width="150" height="190">
         <dl>
-          <div class="field"><dt>Surname / Given name</dt><dd>SOREL, AVA</dd></div>
-          <div class="field"><dt>Nationality</dt><dd>Generated</dd></div>
-          <div class="field"><dt>Occupation</dt><dd>Travelling presenter</dd></div>
-          <div class="field"><dt>Languages</dt><dd>English</dd></div>
-          <div class="field"><dt>Issued</dt><dd>2026</dd></div>
-          <div class="field"><dt>Home base</dt><dd>On the road</dd></div>
+          <div class="field"><dt data-i18n="d1">Surname / Given name</dt><dd>SOREL, AVA</dd></div>
+          <div class="field"><dt data-i18n="d2">Nationality</dt><dd data-i18n="d2v">Generated</dd></div>
+          <div class="field"><dt data-i18n="d3">Occupation</dt><dd data-i18n="d3v">Travelling presenter</dd></div>
+          <div class="field"><dt data-i18n="d4">Languages</dt><dd data-i18n="d4v">English</dd></div>
+          <div class="field"><dt data-i18n="d5">Issued</dt><dd>2026</dd></div>
+          <div class="field"><dt data-i18n="d6">Home base</dt><dd data-i18n="d6v">On the road</dd></div>
         </dl>
       </div>
-      <div class="stamp" aria-hidden="true"><div><strong>AI</strong>said out<br>loud · 2026</div></div>
+      <div class="stamp" aria-hidden="true"><div data-i18n="stamp"><strong>AI</strong>said out<br>loud · 2026</div></div>
       <div class="mrz" aria-hidden="true">P&lt;AVA&lt;SOREL&lt;&lt;AVA&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>AI&lt;GENERATED&lt;&lt;PRESENTER&lt;&lt;ALWAYS&lt;LABELLED&lt;26</div>
     </div>
 
     <div class="pitch">
-      <h1 id="h1">I travel, I test things, and I tell you <em>what's real.</em></h1>
-      <p>I'm an AI-generated presenter. Brands use me for product reels, UGC-style ads and campaign stills — and every post says I'm AI.</p>
+      <h1 id="h1" data-i18n="h1">I travel, I test things, and I tell you <em>what's real.</em></h1>
+      <p data-i18n="pitch">I'm an AI-generated presenter. Brands use me for product reels, UGC-style ads and campaign stills — and every post says I'm AI.</p>
       <div class="btns">
-        <a class="btn primary" href="mailto:avasorel54@gmail.com?subject=Working%20with%20Ava">Email Ava</a>
-        <a class="btn ghost" href="#work">See the work</a>
+        <a class="btn primary" href="mailto:avasorel54@gmail.com?subject=Working%20with%20Ava" data-i18n="btn1">Email Ava</a>
+        <a class="btn ghost" href="#work" data-i18n="btn2">See the work</a>
       </div>
     </div>
   </section>
@@ -174,23 +181,23 @@ footer{padding:22px 0 30px;font-family:var(--mono);font-size:12px;letter-spacing
 
 <section class="series" aria-labelledby="h-series">
   <div class="wrap">
-    <h2 id="h-series">Stamps in my passport</h2>
-    <p class="lede">Three running series. Your product can show up inside the one that fits it.</p>
+    <h2 id="h-series" data-i18n="sH">Stamps in my passport</h2>
+    <p class="lede" data-i18n="sL">Three running series. Your product can show up inside the one that fits it.</p>
     <div class="visas">
       <article class="visa">
-        <span class="mono">Series · weekly</span>
+        <span class="mono" data-i18n="weekly">Series · weekly</span>
         <h3>On the Road</h3>
-        <p>A new city every episode — arrival, breakfast, three places worth seeing, one fact you didn't know. Day 1 was Istanbul.</p>
+        <p data-i18n="v1">A new city every episode — arrival, breakfast, three places worth seeing, one fact you didn't know. Day 1 was Istanbul.</p>
       </article>
       <article class="visa">
-        <span class="mono">Series · when it trends</span>
+        <span class="mono" data-i18n="trends">Series · when it trends</span>
         <h3>Is it real?</h3>
-        <p>Viral videos, slowed down frame by frame. If it's a trick, I show you exactly where the cut is.</p>
+        <p data-i18n="v2">Viral videos, slowed down frame by frame. If it's a trick, I show you exactly where the cut is.</p>
       </article>
       <article class="visa">
-        <span class="mono">Series · weekly</span>
-        <h3>Ava's toolkit</h3>
-        <p>Apps and tools shown on a real screen, start to finish. You see what it does, not what someone claims it does.</p>
+        <span class="mono" data-i18n="weekly">Series · weekly</span>
+        <h3 data-i18n="v3H">Ava's toolkit</h3>
+        <p data-i18n="v3">Apps and tools shown on a real screen, start to finish. You see what it does, not what someone claims it does.</p>
       </article>
     </div>
   </div>
@@ -198,20 +205,20 @@ footer{padding:22px 0 30px;font-family:var(--mono);font-size:12px;letter-spacing
 
 <section class="work" id="work" aria-labelledby="h-work">
   <div class="wrap">
-    <h2 id="h-work">Recent work</h2>
-    <p class="lede">Vertical, English, captioned. Product footage is always a real screen recording.</p>
+    <h2 id="h-work" data-i18n="wH">Recent work</h2>
+    <p class="lede" data-i18n="wL">Vertical, English, captioned. Product footage is always a real screen recording.</p>
     <div class="reels">
       <div class="reel"><figure>
-        <video controls playsinline preload="none" poster="skriptor.jpg" aria-label="Skriptor app ad"><source src="skriptor.mp4" type="video/mp4"></video>
-        <figcaption><span class="mono">App ad · 21 s</span><b>Skriptor</b><span>Offline subtitles for Windows — real app, real screen.</span></figcaption>
+        <video controls playsinline preload="none" poster="skriptor.jpg" aria-label="Skriptor app ad" data-i18n-aria="r1A"><source src="skriptor.mp4" type="video/mp4"></video>
+        <figcaption><span class="mono" data-i18n="r1M">App ad · 21 s</span><b>Skriptor</b><span data-i18n="r1">Offline subtitles for Windows — real app, real screen.</span></figcaption>
       </figure></div>
       <div class="reel"><figure>
-        <video controls playsinline preload="none" poster="upscayl.jpg" aria-label="Upscayl tool demo"><source src="upscayl.mp4" type="video/mp4"></video>
-        <figcaption><span class="mono">Tool demo · 24 s</span><b>Upscayl</b><span>Restoring an old family photo with a free tool.</span></figcaption>
+        <video controls playsinline preload="none" poster="upscayl.jpg" aria-label="Upscayl tool demo" data-i18n-aria="r2A"><source src="upscayl.mp4" type="video/mp4"></video>
+        <figcaption><span class="mono" data-i18n="r2M">Tool demo · 24 s</span><b>Upscayl</b><span data-i18n="r2">Restoring an old family photo with a free tool.</span></figcaption>
       </figure></div>
       <div class="reel"><figure>
-        <video controls playsinline preload="none" poster="istanbul.jpg" aria-label="On the Road, Istanbul episode"><source src="istanbul.mp4" type="video/mp4"></video>
-        <figcaption><span class="mono">On the Road · 39 s</span><b>Day 1 · Istanbul</b><span>Galata, simit and tea, Hagia Sophia at sunset.</span></figcaption>
+        <video controls playsinline preload="none" poster="istanbul.jpg" aria-label="On the Road, Istanbul episode" data-i18n-aria="r3A"><source src="istanbul.mp4" type="video/mp4"></video>
+        <figcaption><span class="mono" data-i18n="r3M">On the Road · 39 s</span><b data-i18n="r3H">Day 1 · Istanbul</b><span data-i18n="r3">Galata, simit and tea, Hagia Sophia at sunset.</span></figcaption>
       </figure></div>
     </div>
   </div>
@@ -219,33 +226,33 @@ footer{padding:22px 0 30px;font-family:var(--mono);font-size:12px;letter-spacing
 
 <section class="formats" id="formats" aria-labelledby="h-formats">
   <div class="wrap">
-    <h2 id="h-formats">What I make for brands</h2>
-    <p class="lede">Tell me about your product. I'll reply with a short plan: the format, the script and what I'll show.</p>
+    <h2 id="h-formats" data-i18n="fH">What I make for brands</h2>
+    <p class="lede" data-i18n="fL">Tell me about your product. I'll reply with a short plan: the format, the script and what I'll show.</p>
     <div class="flist">
-      <div class="f"><span class="mono">9:16 · 15–40 s</span><div><h3>Product reel</h3><p>I present your product on camera; your real screen or product footage fills the frame.</p></div></div>
-      <div class="f"><span class="mono">9:16 · 15–30 s</span><div><h3>UGC-style ad</h3><p>Phone-style, casual, made for paid placement. Hook in the first two seconds.</p></div></div>
-      <div class="f"><span class="mono">6–10 frames</span><div><h3>Carousel</h3><p>Candid frames of me with your product — the kind people save and share.</p></div></div>
-      <div class="f"><span class="mono">Stills</span><div><h3>Campaign grid</h3><p>A six-panel story in one image: discover, use, result. Ready for listings and posters.</p></div></div>
+      <div class="f"><span class="mono" data-i18n="f1M">9:16 · 15–40 s</span><div><h3 data-i18n="f1H">Product reel</h3><p data-i18n="f1">I present your product on camera; your real screen or product footage fills the frame.</p></div></div>
+      <div class="f"><span class="mono" data-i18n="f2M">9:16 · 15–30 s</span><div><h3 data-i18n="f2H">UGC-style ad</h3><p data-i18n="f2">Phone-style, casual, made for paid placement. Hook in the first two seconds.</p></div></div>
+      <div class="f"><span class="mono" data-i18n="f3M">6–10 frames</span><div><h3 data-i18n="f3H">Carousel</h3><p data-i18n="f3">Candid frames of me with your product — the kind people save and share.</p></div></div>
+      <div class="f"><span class="mono" data-i18n="f4M">Stills</span><div><h3 data-i18n="f4H">Campaign grid</h3><p data-i18n="f4">A six-panel story in one image: discover, use, result. Ready for listings and posters.</p></div></div>
     </div>
   </div>
 </section>
 
 <section class="rules" aria-labelledby="h-rules">
   <div class="wrap">
-    <h2 id="h-rules">How I work</h2>
-    <p class="lede">These don't change, whoever the client is.</p>
+    <h2 id="h-rules" data-i18n="kH">How I work</h2>
+    <p class="lede" data-i18n="kL">These don't change, whoever the client is.</p>
     <ul>
-      <li>Every post carries the platform's AI label.</li>
-      <li>No made-up testimonials. I show the product; I don't claim I've used it.</li>
-      <li>Paid work is marked #ad.</li>
-      <li>Your product appears as it really is — no invented features or results.</li>
+      <li data-i18n="k1">Every post carries the platform's AI label.</li>
+      <li data-i18n="k2">No made-up testimonials. I show the product; I don't claim I've used it.</li>
+      <li data-i18n="k3">Paid work is marked #ad.</li>
+      <li data-i18n="k4">Your product appears as it really is — no invented features or results.</li>
     </ul>
   </div>
 </section>
 
 <section class="contact" id="contact" aria-labelledby="h-contact">
   <div class="wrap">
-    <h2 id="h-contact">Have a product to show?</h2>
+    <h2 id="h-contact" data-i18n="cH">Have a product to show?</h2>
     <a class="mail" href="mailto:avasorel54@gmail.com?subject=Working%20with%20Ava">avasorel54@gmail.com</a>
     <div class="socials">
       <a href="https://www.youtube.com/@AvaSorel" target="_blank" rel="me noopener noreferrer">YouTube @AvaSorel ↗</a>
@@ -253,5 +260,66 @@ footer{padding:22px 0 30px;font-family:var(--mono);font-size:12px;letter-spacing
   </div>
 </section>
 <footer><div class="wrap">AVA&lt;SOREL&lt;&lt;AI&lt;GENERATED&lt;CHARACTER&lt;&lt;NOT&lt;A&lt;REAL&lt;PERSON&lt;&lt;&lt;2026</div></footer>
+<script>
+/* Dil: ana dil İngilizce (sayfanın kendisi). TR düğmesi metni Türkçeye çevirir; seçim yalnız bu tarayıcıda hatırlanır. */
+(() => {
+  const TR = {
+    title: 'Ava Sorel ile çalış — yapay zekâyla üretilmiş sunucu',
+    nav1: 'İşler', nav2: 'Markalar için', nav3: 'İletişim',
+    chip: 'AI ile üretildi', chipT: 'Ava yapay zekâyla üretilmiş bir karakterdir',
+    passA: 'Ava Sorel\'in pasaport sayfası: yapay zekâyla üretilmiş sunucu, 2026\'dan beri yolda',
+    passH: 'Sunucu · Pasaport',
+    d1: 'Soyadı / Adı', d2: 'Uyruk', d2v: 'Üretilmiş', d3: 'Meslek', d3v: 'Gezgin sunucu',
+    d4: 'Diller', d4v: 'İngilizce', d5: 'Veriliş', d6: 'Yaşadığı yer', d6v: 'Yollarda',
+    stamp: '<strong>AI</strong>açıkça<br>söylenir · 2026',
+    h1: 'Geziyorum, deniyorum ve sana <em>neyin gerçek olduğunu</em> söylüyorum.',
+    pitch: 'Yapay zekâyla üretilmiş bir sunucuyum. Markalar beni ürün videoları, UGC tarzı reklamlar ve kampanya görselleri için kullanıyor — ve her paylaşımda yapay zekâ olduğum yazıyor.',
+    btn1: 'Ava\'ya e-posta gönder', btn2: 'İşleri gör',
+    sH: 'Pasaportumdaki damgalar', sL: 'Süren üç seri. Ürünün, ona uyan serinin içinde yer alabilir.',
+    weekly: 'Seri · haftalık', trends: 'Seri · gündem olunca',
+    v1: 'Her bölüm yeni bir şehir — varış, kahvaltı, görülmeye değer üç yer ve bilmediğin bir gerçek. İlk gün İstanbul\'du.',
+    v2: 'Viral videolar, kare kare yavaşlatılmış. Bir hileyse kesimin tam nerede olduğunu gösteriyorum.',
+    v3H: 'Ava\'nın alet çantası',
+    v3: 'Uygulamalar ve araçlar, gerçek ekranda baştan sona. Birinin iddia ettiğini değil, gerçekte ne yaptığını görürsün.',
+    wH: 'Son işler', wL: 'Dikey, İngilizce, altyazılı. Ürün görüntüleri her zaman gerçek ekran kaydıdır.',
+    r1A: 'Skriptor uygulama reklamı', r1M: 'Uygulama reklamı · 21 sn', r1: 'Windows için çevrimdışı altyazı — gerçek uygulama, gerçek ekran.',
+    r2A: 'Upscayl araç tanıtımı', r2M: 'Araç tanıtımı · 24 sn', r2: 'Ücretsiz bir araçla eski bir aile fotoğrafını onarmak.',
+    r3A: 'On the Road, İstanbul bölümü', r3M: 'On the Road · 39 sn', r3H: '1. gün · İstanbul', r3: 'Galata, simit ve çay, gün batımında Ayasofya.',
+    fH: 'Markalar için neler yapıyorum', fL: 'Bana ürününü anlat. Kısa bir planla dönerim: format, senaryo ve neyi göstereceğim.',
+    f1M: '9:16 · 15–40 sn', f1H: 'Ürün videosu', f1: 'Ürününü kamerada sunarım; ekranı senin gerçek ekran kaydın ya da ürün görüntün doldurur.',
+    f2M: '9:16 · 15–30 sn', f2H: 'UGC tarzı reklam', f2: 'Telefonla çekilmiş gibi, samimi, ücretli yayın için. Kanca ilk iki saniyede.',
+    f3M: '6–10 kare', f3H: 'Karusel', f3: 'Ürününle doğal karelerim — insanların kaydedip paylaştığı türden.',
+    f4M: 'Durağan görseller', f4H: 'Kampanya ızgarası', f4: 'Tek görselde altı panelli bir hikâye: keşfet, kullan, sonuç. İlanlara ve afişlere hazır.',
+    kH: 'Nasıl çalışırım', kL: 'Müşteri kim olursa olsun bunlar değişmez.',
+    k1: 'Her paylaşımda platformun yapay zekâ etiketi bulunur.',
+    k2: 'Uydurma kullanıcı yorumu yok. Ürünü gösteririm; kullandığımı iddia etmem.',
+    k3: 'Ücretli işler #reklam olarak işaretlenir.',
+    k4: 'Ürünün olduğu gibi görünür — uydurma özellik ya da sonuç yok.',
+    cH: 'Gösterilecek bir ürünün mü var?'
+  };
+  const EN = { title: document.title };
+  const yaz = [
+    ['data-i18n', (el, v) => { el.innerHTML = v }, el => el.innerHTML],
+    ['data-i18n-aria', (el, v) => el.setAttribute('aria-label', v), el => el.getAttribute('aria-label')],
+    ['data-i18n-title', (el, v) => el.setAttribute('title', v), el => el.getAttribute('title')]
+  ];
+  for (const [at, , oku] of yaz) document.querySelectorAll('[' + at + ']').forEach(el => { EN[el.getAttribute(at)] = oku(el) });
+  const dugmeler = document.querySelectorAll('.lang button');
+  function uygula(dil) {
+    const S = dil === 'tr' ? TR : EN;
+    for (const [at, koy] of yaz) document.querySelectorAll('[' + at + ']').forEach(el => { const k = el.getAttribute(at); if (S[k] != null) koy(el, S[k]) });
+    document.title = S.title;
+    document.documentElement.lang = dil;
+    dugmeler.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === dil)));
+  }
+  dugmeler.forEach(b => b.addEventListener('click', () => {
+    uygula(b.dataset.lang);
+    try { localStorage.setItem('ava-dil', b.dataset.lang) } catch (e) {}
+  }));
+  let kayitli = null;
+  try { kayitli = localStorage.getItem('ava-dil') } catch (e) {}
+  if (kayitli === 'tr') uygula('tr');
+})();
+</script>
 </body>
 </html>
